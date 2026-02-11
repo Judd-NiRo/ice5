@@ -1,0 +1,59 @@
+## YAML Template.
+---
+name: Dependent Jobs
+
+on:
+  release:
+    types: created
+  workflow_displatch: #put here!!!!
+  push:
+     branches:
+          - main
+
+jobs: 
+        build: 
+            name: A job for building
+            runs-on: ubuntu-latest
+            steps: 
+
+                 - name: Print Building Message
+                   run: echo Building Application...
+                   
+                 - name: Sleeping for 10 seconds
+                   run: sleep 10
+                   
+        test:
+            name: A job for testing
+            needs: [build]
+            runs-on: ubuntu-latest
+            steps:
+                
+                 - name: Printing Running Message
+                   run: echo Running Tests...
+                   
+                 - name: Testing
+                   run: sleep 5
+                   
+                 - name: Printing Working Directory
+                   run: pwd
+                   
+                 - name: Listing Files
+                   run: ls
+                   
+                 - name: Displaying Environmental Variables
+                   run: env
+                   
+        deploy:
+            name: A job for deploying
+            needs: [test]
+            runs-on: ubuntu-latest
+            steps:
+                
+                 - name: Processing Deploying Application
+                   run: sleep 5
+                   
+                 - name: Deploying Application
+                   run: echo Deploying Application...
+                   
+                 - name: Appllication Contents
+                   run: echo ICE 5, task 1 Completed
