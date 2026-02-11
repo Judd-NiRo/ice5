@@ -3,9 +3,6 @@
 name: Dependent Jobs
 
 on:
-  release:
-    types: created
-  workflow_displatch: #put here!!!!
   push:
      branches:
           - main
