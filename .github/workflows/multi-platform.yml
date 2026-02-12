@@ -5,7 +5,7 @@ name: Multi Platform Jobs
 on:
   release:
     types: created
-  workflow_displatch: #put here!!!!
+  workflow_dispatch: #put here!!!!
   push:
      branches:
           - main
