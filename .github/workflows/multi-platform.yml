@@ -43,7 +43,7 @@ jobs:
                    run: systeminfo
                    
                  - name: OS Specific Command
-                   run: ver
+                   run: echo %OS%
                    
                  - name: Creating a file
                    run: echo IIIITTTTSSSS  WINDOWWWSSSSS TIIIIMMEEEE > insideWindows.txt
