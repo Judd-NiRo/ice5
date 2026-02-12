@@ -17,7 +17,7 @@ jobs:
             steps:
                 
                  - name: Checking out the code
-                   run: actions/checkout@v4
+                   uses: actions/checkout@v4
                    
                  - name: Printing Ubuntu OS Information 
                    run: uname -a
@@ -37,7 +37,7 @@ jobs:
             steps:
                  
                  - name: Cheching out the code
-                   run: actions/checkout@v4
+                   uses: actions/checkout@v4
                    
                  - name: Printing Windows OS Information
                    run: systeminfo
@@ -57,7 +57,7 @@ jobs:
             steps:
                 
                  - name: Checking out the code
-                   run: actions/checkout@v4
+                   uses: actions/checkout@v4
                    
                  - name: Printing Mac OS Information
                    run: uname -a
