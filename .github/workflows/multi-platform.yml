@@ -1,0 +1,72 @@
+## YAML Template.
+---
+name: Multi Platform Jobs
+
+on:
+  release:
+    types: created
+  workflow_displatch: #put here!!!!
+  push:
+     branches:
+          - main
+          
+jobs:
+        Ubuntu_Job:
+            name: Independent Ubuntu Job
+            runs-on: ubuntu-latest
+            steps:
+                
+                 - name: Checking out the code
+                   run: actions/checkout@v4
+                   
+                 - name: Printing Ubuntu OS Information 
+                   run: uname -a
+                   
+                 - name: OS Specific Command
+                   run: apt --version
+                   
+                 - name: Creating a file
+                   run: echo "AYYYOOOO WEEEE INNN UUBUNTUUUUU" > insideUbuntu.txt
+                   
+                 - name: Displaying the file
+                   run: cat insideUbuntu.txt
+                   
+        Windows_Job:
+            name: Independent Windows Job
+            runs-on: windows-latest
+            steps:
+                 
+                 - name: Cheching out the code
+                   run: actions/checkout@v4
+                   
+                 - name: Printing Windows OS Information
+                   run: systeminfo
+                   
+                 - name: OS Specific Command
+                   run: ver
+                   
+                 - name: Creating a file
+                   run: echo IIIITTTTSSSS  WINDOWWWSSSSS TIIIIMMEEEE > insideWindows.txt
+                   
+                 - name: Displaying File
+                   run: type insideWindows.txt
+                   
+        Mac_Job:
+            name: Independent MAC Job
+            runs-on: macos-latest
+            steps:
+                
+                 - name: Checking out the code
+                   run: actions/checkout@v4
+                   
+                 - name: Printing Mac OS Information
+                   run: uname -a
+                   
+                 - name: OS Specific Command
+                   run: sw_vers
+                 
+                 - name: Creating a file
+                   run: echo "FINAL ROUND MACOS.......F I G H T" > insideMac.txt
+                   
+                 - name: Displaying File
+                   run: cat insideMac.txt
